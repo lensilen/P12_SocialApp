@@ -1,8 +1,9 @@
 {
   "expo": {
     "name": "SocialApp",
-    "slug": "SocialApp",
+    "slug": "socialapp",
     "version": "1.0.0",
+    "scheme": "socialapp",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -19,6 +20,53 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "SocialApp membutuhkan kamera untuk membuat story."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "SocialApp membutuhkan galeri untuk memilih foto."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "SocialApp membutuhkan lokasi untuk peta nearby users."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#1d4ed8"
+        }
+      ],
+      [
+        "expo-contacts",
+        {
+          "contactsPermission": "SocialApp membutuhkan kontak untuk fitur sosial."
+        }
+      ],
+      [
+        "expo-calendar",
+        {
+          "calendarPermission": "SocialApp membutuhkan kalender untuk event."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "SocialApp membutuhkan akses galeri.",
+          "savePhotosPermission": "SocialApp ingin menyimpan foto ke galeri."
+        }
+      ],
+      "expo-sharing"
+    ]
   }
 }
