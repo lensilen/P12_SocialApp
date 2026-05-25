@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import MapView, { Circle, Marker } from 'react-native-maps';
@@ -16,6 +17,7 @@ function nearbyUsers(loc) {
 
 export default function MapScreen() {
   const { loc, error, loading, refreshLocation } = useLocation();
+  const [sheetOpen, setSheetOpen] = useState(true);
   const center = loc || { latitude: -6.2, longitude: 106.8 };
 
   if (error) {
@@ -68,25 +70,35 @@ export default function MapScreen() {
         ))}
       </MapView>
 
-      <Pressable style={styles.floatingReload} onPress={refreshLocation}>
-        <Ionicons name="refresh-outline" size={19} color="#26201d" />
-      </Pressable>
-
       <View style={styles.sheet}>
-        <View style={styles.sheetHandle} />
+        <Pressable style={styles.sheetHandleButton} onPress={() => setSheetOpen((value) => !value)}>
+          <View style={styles.sheetHandle} />
+        </Pressable>
         <View style={styles.sheetTitleRow}>
-          <Text style={styles.sheetTitle}>Nearby People</Text>
-          <Text style={styles.sheetCount}>{loading ? 'loading' : `${users.length} online`}</Text>
-        </View>
-        {users.map((user) => (
-          <View key={user.id} style={styles.userRow}>
-            <View style={styles.avatar}>
-              <Text style={styles.avatarText}>{user.name[0]}</Text>
-            </View>
-            <Text style={styles.userName}>{user.name}</Text>
-            <Ionicons name="location-outline" size={17} color="#7c706a" />
+          <Pressable style={styles.titleButton} onPress={() => setSheetOpen((value) => !value)}>
+            <Text style={styles.sheetTitle}>Nearby People</Text>
+            <Ionicons name={sheetOpen ? 'chevron-down-outline' : 'chevron-up-outline'} size={18} color="#26201d" />
+          </Pressable>
+          <View style={styles.sheetActions}>
+            <Text style={styles.sheetCount}>{loading ? 'loading' : `${users.length} online`}</Text>
+            <Pressable style={styles.inlineReload} onPress={refreshLocation}>
+              <Ionicons name="refresh-outline" size={16} color="#26201d" />
+            </Pressable>
           </View>
-        ))}
+        </View>
+        {sheetOpen && (
+          <View>
+            {users.map((user) => (
+              <View key={user.id} style={styles.userRow}>
+                <View style={styles.avatar}>
+                  <Text style={styles.avatarText}>{user.name[0]}</Text>
+                </View>
+                <Text style={styles.userName}>{user.name}</Text>
+                <Ionicons name="location-outline" size={17} color="#7c706a" />
+              </View>
+            ))}
+          </View>
+        )}
       </View>
     </View>
   );
@@ -123,19 +135,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: '800',
   },
-  floatingReload: {
-    alignItems: 'center',
-    backgroundColor: '#fffaf7',
-    borderColor: '#eadfd7',
-    borderRadius: 21,
-    borderWidth: 1,
-    height: 42,
-    justifyContent: 'center',
-    position: 'absolute',
-    right: 14,
-    top: 14,
-    width: 42,
-  },
   sheet: {
     backgroundColor: '#fffaf7',
     borderTopLeftRadius: 8,
@@ -148,12 +147,15 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 0,
   },
+  sheetHandleButton: {
+    alignItems: 'center',
+    paddingBottom: 8,
+  },
   sheetHandle: {
     alignSelf: 'center',
     backgroundColor: '#d8c8bf',
     borderRadius: 2,
     height: 4,
-    marginBottom: 12,
     width: 38,
   },
   sheetTitleRow: {
@@ -167,10 +169,30 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '800',
   },
+  titleButton: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 4,
+  },
   sheetCount: {
     color: '#16856f',
     fontSize: 12,
     fontWeight: '700',
+  },
+  sheetActions: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 8,
+  },
+  inlineReload: {
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    borderColor: '#eadfd7',
+    borderRadius: 16,
+    borderWidth: 1,
+    height: 32,
+    justifyContent: 'center',
+    width: 32,
   },
   userRow: {
     alignItems: 'center',
