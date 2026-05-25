@@ -20,12 +20,12 @@ Kelas : B
 - Notification package tetap disiapkan, tetapi logic-nya placeholder agar aman dibuka di Android Expo Go.
 
 ## Preview
-<img width="738" height="1600" alt="WhatsApp Image 2026-05-25 at 21 13 41" src="https://github.com/user-attachments/assets/e65f163b-d45e-4bfe-9923-3857379569e3" />
-<img width="738" height="1600" alt="WhatsApp Image 2026-05-25 at 21 13 42" src="https://github.com/user-attachments/assets/68394bce-548d-4a0c-9910-1faec54efb6f" />
-<img width="738" height="1600" alt="WhatsApp Image 2026-05-25 at 21 13 42 (1)" src="https://github.com/user-attachments/assets/d699db82-3cce-41e9-b652-3fc138b6566e" />
-<img width="1080" height="2340" alt="WhatsApp Image 2026-05-25 at 21 13 42 (2)" src="https://github.com/user-attachments/assets/a0c44aca-dc84-42d3-8435-785b02a782f1" />
-<img width="738" height="1600" alt="WhatsApp Image 2026-05-25 at 21 13 43" src="https://github.com/user-attachments/assets/b2264bd6-88e9-4a13-a029-c4f5694f3198" />
-<img width="738" height="1600" alt="WhatsApp Image 2026-05-25 at 21 13 43 (1)" src="https://github.com/user-attachments/assets/97fe47c1-a952-4aad-ad9c-135c974fe2ea" />
+<img width="330" height="586" alt="WhatsApp Image 2026-05-25 at 21 13 41" src="https://github.com/user-attachments/assets/e65f163b-d45e-4bfe-9923-3857379569e3" />
+<img width="330" height="586" alt="WhatsApp Image 2026-05-25 at 21 13 42" src="https://github.com/user-attachments/assets/68394bce-548d-4a0c-9910-1faec54efb6f" />
+<img width="330" height="586" alt="WhatsApp Image 2026-05-25 at 21 13 42 (1)" src="https://github.com/user-attachments/assets/d699db82-3cce-41e9-b652-3fc138b6566e" />
+<img width="330" height="586" alt="WhatsApp Image 2026-05-25 at 21 13 42 (2)" src="https://github.com/user-attachments/assets/a0c44aca-dc84-42d3-8435-785b02a782f1" />
+<img width="330" height="586" alt="WhatsApp Image 2026-05-25 at 21 13 43" src="https://github.com/user-attachments/assets/b2264bd6-88e9-4a13-a029-c4f5694f3198" />
+<img width="330" height="586" alt="WhatsApp Image 2026-05-25 at 21 13 43 (1)" src="https://github.com/user-attachments/assets/97fe47c1-a952-4aad-ad9c-135c974fe2ea" />
 
 ## Menjalankan
 
